@@ -1,0 +1,21 @@
+def total(string,start,end):  
+    current = 0;   
+    if(start == end-1):  
+        print(string);  
+    else:   
+        for current in range(start,end):    
+            x = list(string);  
+            temp = x[start];  
+            x[start] = x[current];       
+            x[current] = temp;   
+  
+            total("".join(x),start+1,end);  
+            temp = x[start];  
+            x[start] = x[current];  
+            x[current] = temp;  
+  
+input = input('Enter elements of a list separated by space ')
+Symbol = input.split()
+lenght = len(Symbol);  
+print("All permutations : ");  
+total(Symbol,0,lenght);  
